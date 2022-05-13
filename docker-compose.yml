@@ -3,8 +3,8 @@ services:
   www:
     build:
       context: www
-    ports:
-      - "8080:80"
+#    ports:
+#      - "8080:80"
     environment:
       - NGINX_DOMAIN=www.trevthedev.net
       - NGINX_PORT_HTTP=80
