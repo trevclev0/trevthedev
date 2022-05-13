@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  www:
+    build:
+      context: www
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_DOMAIN=www.trevthedev.net
+      - NGINX_PORT_HTTP=80
+      - NGINX_PORT_HTTPS=443
