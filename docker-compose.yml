@@ -1,11 +1,18 @@
 version: "3.9"
 services:
   www:
+    container_name: www
     build:
       context: www
-#    ports:
-#      - "8080:80"
+    networks:
+      - traefik-proxy
+    labels:
+      - "traefik.http.routers.www.rule=Host(`www.${PROJECT_DOMAIN_NAME}`, `${PROJECT_DOMAIN_NAME}`)"
     environment:
-      - NGINX_DOMAIN=www.trevthedev.net
+      - NGINX_DOMAIN=${PROJECT_DOMAIN_NAME}
       - NGINX_PORT_HTTP=80
       - NGINX_PORT_HTTPS=443
+
+networks:
+  traefik-proxy:
+    external: true
