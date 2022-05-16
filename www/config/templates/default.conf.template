@@ -2,7 +2,7 @@ server {
     listen ${NGINX_PORT_HTTP};
     listen [::]:${NGINX_PORT_HTTP};
 
-    server_name ${NGINX_DOMAIN} www.${NGINX_DOMAIN};
+    server_name www.${NGINX_DOMAIN};
 
     root /usr/share/nginx/html;
     index index.html;
