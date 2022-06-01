@@ -12,6 +12,7 @@ services:
       traefik.http.routers.www.tls: true
     environment:
       - NGINX_DOMAIN=${PROJECT_DOMAIN_NAME}
+      - NGINX_PORT_HTTP=80
   whoami:
     image: traefik/whoami
     networks:
